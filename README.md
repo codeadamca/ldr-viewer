@@ -1,21 +1,18 @@
-# Embed GitHub Contributions On Your Web Page
+# Embed an Interactive LDR File on Your Web Page
 
-A basic tool to fetch a GitHub user's contributions table and display it in an `iframe`. This provides developers the ability to embed a GutHub contributions table into a portfolio.
+A basic tool to display an interactive LDR file using Three.js and an `iframe`. 
 
-![GitHub Contributions](_readme/screenshot-contributions.png)
+![GitHub Contributions](_readme/screenshot-ldr-viewer.png)
 
 > The active version can viewed at:  
-> https://pages.codeadam.ca/github
-
-> An active example can be viewed at:  
-> https://codeadam.ca/
+> https://pages.codeadam.ca/ldr-viewer
 
 ---
 
 ## Repo Resources
 
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [GitHub](https://github.com/)
+- [Three.js](https://threejs.org/)
 
 <br>
 <a href="https://codeadam.ca">
