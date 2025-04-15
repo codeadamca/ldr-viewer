@@ -19,7 +19,7 @@ This project uses vanilla [JavaScript](https://developer.mozilla.org/en-US/docs/
 
 ## Repo Resources
 
-- [Visual Studio Code](https://code.visualstudio.com/)
+- [BrickLink Studio](https://www.bricklink.com/v3/studio/download.page)
 - [Three.js](https://threejs.org/)
 
 <br>
