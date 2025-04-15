@@ -7,6 +7,14 @@ A basic tool to display an interactive LDR file using Three.js and an `iframe`.
 > The active version can viewed at:  
 > https://pages.codeadam.ca/ldr-viewer
 
+--
+
+## Project Stack
+
+This project uses vanilla [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [Three.js](https://threejs.org/).
+
+<img src="https://console.codeadam.ca/api/image/javascript" width="60"> <img src="https://console.codeadam.ca/api/image/threejs" width="60"> 
+
 ---
 
 ## Repo Resources
