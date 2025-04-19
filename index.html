@@ -124,14 +124,11 @@
       </div>     
 
       <iframe width="600" 
-        data-path="https://ldr.brickmmo.com/cube-puzzle/" 
-        data-filename="cube-puzzle.packed.mpd"
-        data-background="14609389"
         height="320" 
         frameborder="0" 
         allowtransparency 
         id="iframe"
-        src="view"></iframe>
+        src=""></iframe>
 
       <div class="w3-padding-32">
         <textarea class="w3-input" 
@@ -158,6 +155,9 @@
   const embedRef = document.getElementById('embed');
   const copyRef = document.getElementById('copy');
 
+  const domain = 'https://pages.codeadam.ca/ldr-viewer';
+  // const domain = 'http://localhost:8888';
+
   // Define a variable to set the delay required
   const delay = 2000;
 
@@ -182,28 +182,22 @@
     console.log(path);
     */
 
+    let url = domain + '/view?background=14609389&filename=cube-puzzle.packed.mpd&path=' + encodeURI('https://ldr.brickmmo.com/cube-puzzle/');
+    
+
     if(ldrRef.value != "")
     {
-      iframeRef.setAttribute('data-path', path);
-      iframeRef.setAttribute('data-filename', filename);
-      iframeRef.src = 'view';
+      url = domain + '/view?background=14609389&filename=' + filename + '&path=' + encodeURI(path);
+      iframeRef.src = url;
     }
-    else
-    {
-      iframeRef.setAttribute('data-path', 'https://ldr.brickmmo.com/cube-puzzle/');
-      iframeRef.setAttribute('data-filename', 'cube-puzzle.packed.mpd');
-      iframeRef.src = 'view';
-    }
+    
 
-    embedRef.value = '<iframe src=\"https://pages.codeadam.ca/ldr-viewer/view" ' + 
-      'data-path="' + path + '" ' + 
-      'data-filename="' + filename + '" ' +
-      'data-background="14609389" ' +
-      'height="320" wisth="600" frameborder="0" allowtransparency id="iframe" allowtransparency></iframe>';
+    embedRef.value = '<iframe src="' + url + '" ' +
+      'height="320" width="600" frameborder="0" allowtransparency id="iframe"></iframe>';
   }
 
   window.addEventListener('load', () => {
-    // setLdr();
+    setLdr();
   });
 
   copyRef.addEventListener('click', (event) => {

@@ -1,6 +1,13 @@
+const url = new URL(window.location.href);
+const ldrPath = url.searchParams.get("path");
+const ldrFilename = url.searchParams.get("filename");
+let ldrBackgrond = Number(url.searchParams.get("background"));
+
+/*
 const ldrPath = window.frameElement.getAttribute("data-path");
 const ldrFilename = window.frameElement.getAttribute("data-filename");
 let ldrBackgrond = Number(window.frameElement.getAttribute("data-background"));
+*/
 
 if(!ldrBackgrond) ldrBackgrond = 4291611852;
 
