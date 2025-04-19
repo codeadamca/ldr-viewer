@@ -56,8 +56,8 @@
     margin: auto;
   }
   input {
-    font-size: 24px;
-    max-width: 400px;
+    font-size: 16px;
+    max-width: 600px;
     text-align: center;
   }
 
@@ -73,8 +73,8 @@
 
   iframe {
     width: 100%;
-    max-width: 800px;
-    height: 160px;
+    max-width: 600px;
+    height: 320px;
     border: none;
   }
 
@@ -113,23 +113,25 @@
 
     <div id="step-1-box">
 
-      <a href="https://github.com/codeadamca"><img src="images/github.jpg" width="150" alt="GitHub Logo"></a>
-
       <div class="w3-padding-32">
         <input class="w3-input" 
           type="text" 
-          value="codeadamca" 
-          id="username"
+          value="https://ldr.brickmmo.com/cube-puzzle/cube-puzzle.packed.mpd" 
+          id="ldr"
           autocomplete="off" 
           autocapitalize="off" 
           spellcheck="false">        
       </div>     
 
-      <iframe width="800" 
-        height="160" 
+      <iframe width="600" 
+        data-path="https://ldr.brickmmo.com/cube-puzzle/" 
+        data-filename="cube-puzzle.packed.mpd"
+        data-background="14609389"
+        height="320" 
         frameborder="0" 
         allowtransparency 
-        id="iframe"></iframe>
+        id="iframe"
+        src="view"></iframe>
 
       <div class="w3-padding-32">
         <textarea class="w3-input" 
@@ -152,7 +154,7 @@
 
   // Create references to each DOM element needed
   const iframeRef = document.getElementById('iframe');
-  const usernameRef = document.getElementById('username');
+  const ldrRef = document.getElementById('ldr');
   const embedRef = document.getElementById('embed');
   const copyRef = document.getElementById('copy');
 
@@ -163,29 +165,45 @@
   let timer;
 
   // Track when useer stops typing
-  usernameRef.addEventListener('keyup', () => {
+  ldrRef.addEventListener('keyup', () => {
     clearTimeout(timer);
-    timer = setTimeout(setUsername, delay)
+    timer = setTimeout(setLdr, delay)
   });
 
-  // Use the provided username to display github contributions
-  function setUsername()
+  // Use the provided ldr to display github contributions
+  function setLdr()
   {
-    if(usernameRef.value == "")
+    let filename = ldrRef.value.split('/');
+    filename = filename[filename.length-1];
+    let path = ldrRef.value.replace(filename, "");
+
+    /*
+    console.log(filename);
+    console.log(path);
+    */
+
+    if(ldrRef.value != "")
     {
-      iframeRef.src = 'https://pages.codeadam.ca/github-contributions/blank';
+      iframeRef.setAttribute('data-path', path);
+      iframeRef.setAttribute('data-filename', filename);
+      iframeRef.src = 'view';
     }
     else
     {
-      iframeRef.src = 'https://pages.codeadam.ca/github-contributions/' + usernameRef.value;  
+      iframeRef.setAttribute('data-path', 'https://ldr.brickmmo.com/cube-puzzle/');
+      iframeRef.setAttribute('data-filename', 'cube-puzzle.packed.mpd');
+      iframeRef.src = 'view';
     }
-    embedRef.value = '<iframe src=\"https://pages.codeadam.ca/github-contributions/' + 
-      usernameRef.value + 
-      '" width="800" height="190" frameborder="0" allowtransparency id="iframe"></iframe>';
+
+    embedRef.value = '<iframe src=\"https://pages.codeadam.ca/ldr-viewer/view" ' + 
+      'data-path="' + path + '" ' + 
+      'data-filename="' + filename + '" ' +
+      'data-background="14609389"' +
+      'height="320" wisth="600" frameborder="0" allowtransparency id="iframe" allowtransparency></iframe>';
   }
 
   window.addEventListener('load', () => {
-    setUsername();
+    setLdr();
   });
 
   copyRef.addEventListener('click', (event) => {
