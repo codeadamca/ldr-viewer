@@ -7,6 +7,10 @@ A basic tool to display an interactive LDR file using Three.js and an `iframe`.
 > The active version can viewed at:  
 > https://pages.codeadam.ca/ldr-viewer
 
+> [!NOTE]
+> Background colours passed using URL parameters must currently be formatted using an Android colour. Use the [Converting Colors](https://convertingcolors.com/) to convert a colour to any format.
+
+
 ---
 
 ## Project Stack
@@ -14,9 +18,6 @@ A basic tool to display an interactive LDR file using Three.js and an `iframe`.
 This project uses vanilla [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [Three.js](https://threejs.org/).
 
 <img src="https://console.codeadam.ca/api/image/javascript" width="60"> <img src="https://console.codeadam.ca/api/image/threejs" width="60"> 
-
-> [!NOTE]
-> Background colours passed using URL parameters must currently be formatted using an Android colour. Use the [Converting Colors](https://convertingcolors.com/) to convert a colour to any format.
 
 ---
 
