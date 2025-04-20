@@ -15,6 +15,9 @@ This project uses vanilla [JavaScript](https://developer.mozilla.org/en-US/docs/
 
 <img src="https://console.codeadam.ca/api/image/javascript" width="60"> <img src="https://console.codeadam.ca/api/image/threejs" width="60"> 
 
+> [!NOTE]
+> Background colours passed using URL parameters must currently be formatted using an Android colour. Use the [Converting Colors](https://convertingcolors.com/) to convert a colour to any format.
+
 ---
 
 ## Repo Resources
